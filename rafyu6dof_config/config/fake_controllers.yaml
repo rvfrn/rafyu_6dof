@@ -1,0 +1,20 @@
+controller_list:
+  - name: fake_rafyu6dof_arm_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - base_to_shoulder
+      - shoulder1_to_lower_arm
+      - lower_arm_to_upper_arm
+      - upper_arm_to_wrist
+      - wrist_to_hand
+      - hand_to_hand_rotate
+      - grip_1_extension
+      - grip_2_extension
+  - name: fake_gripper_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - hand_to_hand_rotate
+      - grip_1_extension
+initial:  # Define initial robot poses per group
+  - group: rafyu6dof_arm
+    pose: default
